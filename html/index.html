@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: none; 
+            background: none; 
+        }
+
+        #item-image {
+            position: absolute;
+            top: 200px; 
+            right: 200px; 
+            width: 25%;
+            height: 25%;           
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <img id="item-image" src="" alt="Item Image">
+    <script>
+     
+        window.addEventListener('message', function(event) {
+            const data = event.data;
+
+            if (data.action === 'displayImage') {
+                const imageElement = document.getElementById('item-image');
+                imageElement.src = data.imagePath;
+                document.body.style.display = 'block'; 
+            }
+
+            if (data.action === 'hideImage') {
+                document.body.style.display = 'none'; 
+            }
+        });
+    </script>
+</body>
+</html>
