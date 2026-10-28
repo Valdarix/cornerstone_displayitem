@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'ValdarixGames'
 description 'Simple script to display item images on the players screen for 5 seconds.'
-version '0.0.2a'
+version '0.0.3'
 
 client_script 'client/client.lua'
 server_script 'server/server.lua'
